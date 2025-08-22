@@ -1,10 +1,18 @@
+import { Grid } from '@mui/material'
 import React from 'react'
 
 const Contacts = () => {
   return (
-    <div>
-      Contacts
-    </div>
+    <>
+    <Grid container>
+        <Grid>
+
+        </Grid>
+        <Grid>
+            
+        </Grid>
+    </Grid>
+    </>
   )
 }
 

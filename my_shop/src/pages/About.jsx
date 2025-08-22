@@ -9,7 +9,7 @@ const About = () => {
       Hello
       </Typography>
       
-      <Box display={'flex'} p={10} bgcolor={'skyblue'} width={'80%'} margin={'auto'} alignItems={"center"}>
+      <Box display={'flex'} p={10} bgcolor={'skyblue'} width={'80%'} margin={'auto'} alignItems={"center "}>
         <Box width={'60%'}>
           <Typography variant='h3' marginBottom={2}>
             Border Hero With Cropped image and shadows
