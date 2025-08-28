@@ -10,8 +10,29 @@ const Counter = () => {
     const decrease =()=>{
         setCount(--count)
     }
+
+    let [data, setData]=useState(100)
+
+    const inc =()=>{
+        setData(data+10)
+    }
+    const dec =()=>{
+        setData(data-10)
+    }
   return (
     <div>
+        data:{data}
+        <Button onClick={inc}>IncInData</Button>
+        <Button onClick={dec}>DecInData</Button>
+        {
+            data != 0 &&
+        <Button onClick={()=>{
+            setData(100)
+        }}>
+            Reset
+        </Button>
+
+        }
         count: {count}
         {
             count < 10 &&
