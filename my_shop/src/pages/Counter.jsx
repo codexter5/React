@@ -1,7 +1,8 @@
 import { Button } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Counter = () => {
+    let [count, setCount]=useState(0)
   return (
     <div>
         count: 0;
