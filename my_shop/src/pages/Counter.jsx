@@ -12,14 +12,21 @@ const Counter = () => {
     }
   return (
     <div>
-        count: {count};
+        count: {count}
+        {
+            count < 10 &&
         <Button onClick={increase}>Increase</Button>
+        }
         <Button onClick={decrease}>Decrease</Button>
+        {
+            count != 0 &&
         <Button onClick={()=>{
             setCount(0)
         }}>
             Reset
         </Button>
+
+        }
       
     </div>
   )
