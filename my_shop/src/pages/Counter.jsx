@@ -3,11 +3,23 @@ import React, { useState } from 'react'
 
 const Counter = () => {
     let [count, setCount]=useState(0)
+
+    const increase = () =>{
+        setCount(++count)
+    }
+    const decrease =()=>{
+        setCount(--count)
+    }
   return (
     <div>
-        count: 0;
-        <Button>Increase</Button>
-        <Button>Decrease</Button>
+        count: {count};
+        <Button onClick={increase}>Increase</Button>
+        <Button onClick={decrease}>Decrease</Button>
+        <Button onClick={()=>{
+            setCount(0)
+        }}>
+            Reset
+        </Button>
       
     </div>
   )
