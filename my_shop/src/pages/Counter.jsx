@@ -1,5 +1,6 @@
 import { Button } from '@mui/material'
 import React, { useEffect } from 'react'
+import MyButton from '../components/layouts/MyButton'
 
 const Counter = () => {
   let [count,setc]=React.useState(0)
@@ -30,10 +31,13 @@ useEffect(()=>{
       <Button onClick={()=>setdata(data+10)}>Increase</Button>
       <Button onClick={()=>setdata(data-10)}>Decrease</Button>
       </div>
-      Count: {count}{
+      Count: {count}
+      <MyButton color='yellow' text='UP' test={increase}/>
+      {
         count<10 &&
         <Button onClick={increase}>Increase</Button>
       }
+      <MyButton color='blue' text='sup' test = {decrease}/>
       {
         count>0 &&
       <Button onClick={decrease}>Decrease</Button>

@@ -6,7 +6,6 @@ import Layout from "./components/layouts/layout";
 import Contacts from "./pages/Contacts";
 import Counter from "./pages/Counter";
 import Room from "./pages/Room";
-import MyButton from "./components/layouts/MyButton"
 
 const MyRouter = () => {
   return (
