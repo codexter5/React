@@ -4,6 +4,7 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/layouts/layout";
 import Contacts from "./pages/Contacts";
+import Counter from "./pages/Counter";
 
 const MyRouter = () => {
   return (
@@ -14,6 +15,7 @@ const MyRouter = () => {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/about" element={<About/>}/>
                 <Route path="/contact" element={<Contacts/>}/>
+                <Route path="/counter" element={<Counter/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Route>
         </Routes>
