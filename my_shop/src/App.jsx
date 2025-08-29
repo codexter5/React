@@ -1,33 +1,45 @@
-// import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import MyRouter from './MyRouter'
-import { MyContextProvider } from './components/MyContextProvider'
-import { createContext, useState } from 'react'
-export const MyThemeContext = createContext()
+import React, { useState, createContext } from 'react';
+// import './mystyle.css';
+import MyRoutes from './MyRoutes';
+import { BrowserRouter } from 'react-router-dom';
+import { MyContextProvider } from './components/Layout/MyContext';
+import counterReducer from './redux/counterReducer';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux'; // ✅ Missing import
 
-function App(){
-  const [theme, setTheme] = useState('light')
+export const MyThemeContext = createContext();
+
+const counterStore = createStore(counterReducer); // ✅ Moved outside component for performance
+
+const App = () => {
+  const [theme, setTheme] = useState("dark");
+
   return (
-    <>
-    <MyThemeContext.Provider value={theme}>
-    <MyContextProvider>
-    <button 
-className={`${theme=="dark"?'bg-blue-400': bg-amber-300} px-4 py-2 fixed top-3 right-3`}
-     onClick={()=>{
-      if(theme == 'light'){
-        setTheme('dark')
-      }else{
-        setTheme('light')
-      }
-    }}
-      >{theme}</button>
-    <MyRouter></MyRouter>
-    
-    </MyContextProvider>
-    </MyThemeContext.Provider>
-    </>
-  )
-}
+    <div className={theme === "dark" ? "dark" : ""}>
+      <Provider store={counterStore}>
+        <MyThemeContext.Provider value={{ theme, setTheme }}>
+          <MyContextProvider>
+            <BrowserRouter>
+              <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
+                <button
+                  className="bg-amber-300 px-4 py-2 fixed top-[30px] right-10 z-50"
+                  onClick={() => setTheme(prev => (prev === "dark" ? "light" : "dark"))}
+                >
+                  {theme}
+                </button>
 
-export default App
+                <MyRoutes />
+              </div>
+            </BrowserRouter>
+          </MyContextProvider>
+        </MyThemeContext.Provider>
+      </Provider>
+
+      <div className="bg-blue-500 text-white p-4 text-2xl">
+        Tailwind is working!
+      </div>
+    </div>
+  );
+};
+
+export default App;

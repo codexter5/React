@@ -8,6 +8,7 @@ import Counter from "./pages/Counter";
 import Room from "./pages/Room";
 import DataFetch from "./pages/DataFetch";
 import Products from "./pages/Products";
+import ReduxCounter from "./pages/ReduxCounter"
 
 const MyRouter = () => {
   return (
@@ -21,6 +22,7 @@ const MyRouter = () => {
                 <Route path="/counter" element={<Counter/>}/>
                 <Route path="/product/:id" element={<Products/>}/>
                 <Route path='/datafetch' element={<DataFetch/>}/>
+                <Route path='/rcounter' element={<ReduxCounter/>}/>
                 <Route path="/room" element={<Room/>}/>
                 <Route path="*" element={<NotFound/>}/>
             </Route>
