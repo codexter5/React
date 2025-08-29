@@ -6,6 +6,7 @@ import Layout from "./components/layouts/layout";
 import Contacts from "./pages/Contacts";
 import Counter from "./pages/Counter";
 import Room from "./pages/Room";
+import DataFetch from "./pages/DataFetch";
 
 const MyRouter = () => {
   return (
@@ -19,6 +20,7 @@ const MyRouter = () => {
                 <Route path="/counter" element={<Counter/>}/>
                 <Route path="/room" element={<Room/>}/>
                 <Route path="*" element={<NotFound/>}/>
+                <Route path='/datafetch' element={<DataFetch/>}/>
             </Route>
         </Routes>
       </BrowserRouter>

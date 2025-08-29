@@ -1,9 +1,13 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
-import React from 'react'
+import React, { useContext } from 'react'
+import { MyThemeContext } from '../App'
 
 const Contacts = () => {
+  let theme = useContext(MyThemeContext)
   return (
     <>
+    <button className={`${theme=='dark'?'dark_btn':'light_btn'}`}>Testing Theme</button>
+    <button className={`${theme}_btn`}>Testing Theme</button>
       <Grid container width={'80%'} margin={'auto'} marginY={5}>
         <Grid size={{xs: 12, md: 6}} bgcolor={'success.light'}>
             <Typography variant="h4">Address</Typography>

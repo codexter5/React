@@ -1,19 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, createContext } from 'react'
 import MyRouter from './MyRouter'
 import { MyContextProvider } from './components/MyContextProvider'
 
-function App() {
+// Import your Button component or use a native button
+// import Button from './components/Button' // Uncomment if you have one
+
+export const MyThemeContext = createContext()
+
+const App = () => {
+  const [theme, setTheme] = useState('light')
+
   return (
-    <>
-    <MyContextProvider>
+    <MyThemeContext.Provider value={theme}>
+      <MyContextProvider>
+        <button
+          className={`${
+            theme === 'dark' ? 'bg-blue-400' : 'bg-amber-300'
+          } px-4 py-2 fixed top-[30px] right-10`}
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        >
+          {theme}
+        </button>
 
-        <MyRouter></MyRouter>
-
-    </MyContextProvider>
-    </>
+        <MyRouter />
+      </MyContextProvider>
+    </MyThemeContext.Provider>
   )
 }
 
 export default App
+
