@@ -26,7 +26,7 @@ useEffect(()=>{
   return (
     <div>
       <div>
-        
+      <h1>{info}</h1>
       Data: {data}
       <Button onClick={()=>setdata(data+10)}>Increase</Button>
       <Button onClick={()=>setdata(data-10)}>Decrease</Button>
