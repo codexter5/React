@@ -7,6 +7,7 @@ import Contacts from "./pages/Contacts";
 import Counter from "./pages/Counter";
 import Room from "./pages/Room";
 import DataFetch from "./pages/DataFetch";
+import Products from "./pages/Products";
 
 const MyRouter = () => {
   return (
@@ -18,9 +19,10 @@ const MyRouter = () => {
                 <Route path="/about" element={<About/>}/>
                 <Route path="/contact" element={<Contacts/>}/>
                 <Route path="/counter" element={<Counter/>}/>
+                <Route path="/product/:id" element={<Products/>}/>
+                <Route path='/datafetch' element={<DataFetch/>}/>
                 <Route path="/room" element={<Room/>}/>
                 <Route path="*" element={<NotFound/>}/>
-                <Route path='/datafetch' element={<DataFetch/>}/>
             </Route>
         </Routes>
       </BrowserRouter>
